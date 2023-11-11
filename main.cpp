@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <cstdlib>
+#include <limits>
 
 #include "password_generator.hpp"
 
@@ -14,9 +15,32 @@ int main()
 
 	std::cout << "How many passwords generate: ";
 	std::cin >> numPasswords;
+	
+	while (true)
+	{
+		std::cout<<"Enter the length of the passwords (6 to 64): ";
+		std::cin >> length;
 
-	std::cout << "Password length: ";
-	std::cin >> length;
+		// Check for valid numeric input
+		if (std::cin.fail())
+		{
+			std::cout << "Invalid input. Please enter a number." << std::endl;
+			// Clear the error flag
+			std::cin.clear();
+			// Ignore the rest of the line
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			continue;
+		}
+
+		// Validate the length of the password
+		if (length < 6 || length > 64)
+		{
+			std::cout << "Error: Password length should be between 6 and 64." << std::endl;
+			// Ask for input again
+			continue;
+		}
+		break;
+	}
 
 	std::cout << "Include numbers (y/n): ";
 	std::cin >> digitChoice;
