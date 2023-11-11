@@ -14,7 +14,7 @@ This is a simple yet effective Password Generator program that allows users to c
 Follow these steps to use the Password Generator:
 
 1. **Clone the Repository**:
-   - Clone this repository to your local machine using `git clone https://github.com/YourUsername/Password_generator.git`.
+   - Clone this repository to your local machine using `git clone https://github.com/JakubMierzwa02/Password_generator.git`.
 
 2. **Navigate to the Directory**:
    - Change your directory to the folder where you cloned the repo: `cd Password_generator`.
