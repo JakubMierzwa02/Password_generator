@@ -3,6 +3,7 @@
 
 #include <string>
 #include <ctime>
+#include <cctype>
 
 std::string generatePassword(int length, bool includeDigits, bool includeSpecialChars)
 {
@@ -33,6 +34,12 @@ bool validatePasswordLength(int length)
 bool validateNumberOfPasswords(int numPasswords) 
 {
     return (numPasswords >= 1 && numPasswords <= 10000);
+}
+
+// Function to validate user's yes/no choice
+bool validateYesNoChoice(char choice)
+{
+	return (choice == 'y' || choice == 'n');
 }
 
 #endif

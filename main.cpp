@@ -64,11 +64,35 @@ int main()
 		break;
 	}
 
-	std::cout << "Include numbers (y/n): ";
-	std::cin >> digitChoice;
+	// Validate user's choice for including digits
+	while (true)
+	{
+		std::cout << "Include numbers (y/n): ";
+		std::cin >> digitChoice;
+		digitChoice = std::tolower(digitChoice);
+		
+		if (!validateYesNoChoice(digitChoice))
+		{
+			std::cout << "Invalid input. Please enter 'y' for yes or 'n' for no." << std::endl;
+			continue;
+		}
+		break;
+	}
 
-	std::cout << "Include special characters (y/n): ";
-	std::cin >> specialCharChoice;
+	// Validate user's choice for including special characters
+	while (true)
+	{
+		std::cout << "Include special characters (y/n): ";
+		std::cin >> specialCharChoice;
+		specialCharChoice = std::tolower(specialCharChoice);
+
+		if (!validateYesNoChoice(specialCharChoice))
+		{
+			std::cout << "Invalid input. Please enter 'y' for yes or 'n' for no." << std::endl;
+			continue;
+		}
+		break;
+	}
 
 	bool includeDigits = (digitChoice == 'y');
 	bool includeSpecialChars = (specialCharChoice == 'y');
