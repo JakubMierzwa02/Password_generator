@@ -15,6 +15,31 @@ int main()
 
 	std::cout << "How many passwords generate: ";
 	std::cin >> numPasswords;
+
+	while (true)
+	{
+		std::cout << "How many password to generate (1 to 10000): ";
+		std::cin >> numPasswords;
+
+		// Check for valid numeric input
+		if (std::cin.fail())
+		{
+			std::cout << "Invalid input. Please enter a number." << std::endl;
+			// Clear the error flag
+			std::cin.clear();
+			// Ignore the rest of the line
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			continue;
+		}
+
+		// Validate the number of passwords
+		if (numPasswords < 1 || numPasswords > 10000)
+		{
+			std::cout << "Error: The number of passwords should be between 1 and 10000." << std::endl;
+			continue;
+		}
+		break;
+	}
 	
 	while (true)
 	{
