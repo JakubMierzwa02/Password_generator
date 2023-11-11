@@ -1,3 +1,6 @@
+#ifndef PASSWORD_GENERATOR_HPP
+#define PASSWORD_GENERATOR_HPP
+
 #include <string>
 #include <ctime>
 
@@ -19,3 +22,17 @@ std::string generatePassword(int length, bool includeDigits, bool includeSpecial
 
 	return password;
 }
+
+// Function to validate the length of a password
+bool validatePasswordLength(int length) 
+{
+    return (length >= 6 && length <= 64);
+}
+
+// Function to validate the number of passwords
+bool validateNumberOfPasswords(int numPasswords) 
+{
+    return (numPasswords >= 1 && numPasswords <= 10000);
+}
+
+#endif

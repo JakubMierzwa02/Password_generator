@@ -13,9 +13,6 @@ int main()
 	int numPasswords, length;
 	char digitChoice, specialCharChoice;
 
-	std::cout << "How many passwords generate: ";
-	std::cin >> numPasswords;
-
 	while (true)
 	{
 		std::cout << "How many password to generate (1 to 10000): ";
@@ -33,7 +30,7 @@ int main()
 		}
 
 		// Validate the number of passwords
-		if (numPasswords < 1 || numPasswords > 10000)
+		if (!validateNumberOfPasswords(numPasswords))
 		{
 			std::cout << "Error: The number of passwords should be between 1 and 10000." << std::endl;
 			continue;
@@ -58,7 +55,7 @@ int main()
 		}
 
 		// Validate the length of the password
-		if (length < 6 || length > 64)
+		if (!validatePasswordLength(length))
 		{
 			std::cout << "Error: Password length should be between 6 and 64." << std::endl;
 			// Ask for input again

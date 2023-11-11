@@ -46,6 +46,24 @@ TEST(PasswordGeneratorTest, UniquenessTest)
 	}
 }
 
+// Test the password length validation
+TEST(PasswordGeneratorTest, ValidatePasswordLength)
+{
+	EXPECT_TRUE(validatePasswordLength(6));
+	EXPECT_TRUE(validatePasswordLength(64));
+	EXPECT_FALSE(validatePasswordLength(5));
+	EXPECT_FALSE(validatePasswordLength(65));
+}
+
+// Test the number of passwords validation
+TEST(PasswordGeneratorTest, ValidateNumberOfPasswords) 
+{
+    EXPECT_TRUE(validateNumberOfPasswords(1));  
+    EXPECT_TRUE(validateNumberOfPasswords(10000));
+    EXPECT_FALSE(validateNumberOfPasswords(0));
+    EXPECT_FALSE(validateNumberOfPasswords(10001));
+}
+
 int main(int argc, char **argv) 
 {
     ::testing::InitGoogleTest(&argc, argv);
