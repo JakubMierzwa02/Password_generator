@@ -1,13 +1,13 @@
 # Password Generator
 
-This is a simple yet effective Password Generator program that allows users to create random and secure passwords. It prompts users for specific criteria like the number of passwords, length, inclusion of numbers, and special characters to generate customized passwords.
+This program is a C++ based password generator, which creates a set of random passwords based on user input. It's designed to generate secure and complex passwords that meet various security standards.
 
 ## Features
 
-- **Customizable Length**: Users can specify the desired length for each password.
-- **Inclusion of Numbers**: Option to include or exclude numbers in the password.
-- **Inclusion of Special Characters**: Option to include or exclude special characters in the password.
-- **Multiple Passwords**: Ability to generate multiple passwords at once.
+- **Customizable Password Length**: Users can specify the desired length of the generated passwords.
+- **Inclusion of Digits and Special Characters**: Users have the option to include digits and/or special characters in the passwords.
+- **Complexity Check**: The program checks the complexity of the generated passwords and filters out those that are considered too simple or weak.
+- **User-Defined Number of Passwords**: Users can specify the number of passwords they want to generate in one go.
 
 ## How to Use
 
@@ -35,3 +35,7 @@ Follow these steps to use the Password Generator:
    - When prompted, enter the number of passwords you want to generate.
    - Enter the desired length for each password.
    - Choose whether to include numbers and/or special characters.
+
+## Contact
+
+For any queries or suggestions, please contact [Jakub Mierzwa](mailto:kontakt.jakubmierzwa@gmail.com).
