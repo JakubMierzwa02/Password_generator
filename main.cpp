@@ -99,7 +99,13 @@ int main()
 
 	std::vector<std::string> passwords;
 	for (int i = 0; i < numPasswords; i++)
-		passwords.push_back(generatePassword(length, includeDigits, includeSpecialChars));
+	{
+		std::string password = generatePassword(length, includeDigits, includeSpecialChars);
+		if (isPasswordComplex(password))
+			passwords.push_back(password);
+		else
+			i--;
+	}
 
 	std::ofstream outFile("passwords.txt");
 

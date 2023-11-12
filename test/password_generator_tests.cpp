@@ -64,6 +64,33 @@ TEST(PasswordGeneratorTest, ValidateNumberOfPasswords)
     EXPECT_FALSE(validateNumberOfPasswords(10001));
 }
 
+// Test the validateYesNoChoice function
+TEST(PasswordGeneratorTest, ValidateYesNoChoice)
+{
+    EXPECT_TRUE(validateYesNoChoice('y'));
+    EXPECT_TRUE(validateYesNoChoice('n'));
+
+    EXPECT_FALSE(validateYesNoChoice('a'));
+    EXPECT_FALSE(validateYesNoChoice('z'));
+    EXPECT_FALSE(validateYesNoChoice('0'));
+    EXPECT_FALSE(validateYesNoChoice('1'));
+    EXPECT_FALSE(validateYesNoChoice('Y'));
+    EXPECT_FALSE(validateYesNoChoice('N'));
+}
+
+// Test the isPasswordComplex function
+TEST(PasswordGeneratorTest, CheckComplexity)
+{
+	EXPECT_FALSE(isPasswordComplex("1234"));
+	EXPECT_FALSE(isPasswordComplex("abcd"));
+	EXPECT_FALSE(isPasswordComplex("ABCD"));
+	EXPECT_FALSE(isPasswordComplex("0000"));
+	EXPECT_FALSE(isPasswordComplex("1aB$6789"));
+	EXPECT_FALSE(isPasswordComplex("12ABCD34"));
+
+	EXPECT_TRUE(isPasswordComplex("3*(7619p"));
+}
+
 int main(int argc, char **argv) 
 {
     ::testing::InitGoogleTest(&argc, argv);

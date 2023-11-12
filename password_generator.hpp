@@ -42,4 +42,16 @@ bool validateYesNoChoice(char choice)
 	return (choice == 'y' || choice == 'n');
 }
 
+bool isPasswordComplex(const std::string& password)
+{
+	const std::string simpleSequences[] = {"1234", "2345", "3456", "4567", "5678", "6789", "7890", "abcd", "ABCD", "0000", };
+
+	for (const auto& seq : simpleSequences)
+	{
+		if (password.find(seq) != std::string::npos)
+			return false;
+	}
+	return true;
+}
+
 #endif
